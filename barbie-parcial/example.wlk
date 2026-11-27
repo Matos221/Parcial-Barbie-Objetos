@@ -128,7 +128,7 @@ const fiestita1 = new Fiesta()
 
   b) Verdadero.
     Para definir si esEpica() una fiesta, tenemos varias alternaticas mas declarativas que la que encontramos ahora.
-    Buscamo el "que", no el "como" de la situacion actual. Los calculos o preguntas podemos delegar en otros modulos aparte.
+    Buscamos el "que", no el "como" de la situacion actual. Los calculos o preguntas podemos delegar en otros modulos aparte.
 
   c) Verdadero.
     Sobre la solucion actual existen varias formas de agregar estos filtros de "admisión". 
@@ -151,8 +151,12 @@ class Fiesta {
     }
   }
 
-  method esEpica() {
+  method todosBrillan() {
     return invitados.all({i => i.brillo() > 50})
+  }
+
+  method esEpica() {
+    return self.todosBrillan()
   }
 
   method tamanio() = invitados.size()
